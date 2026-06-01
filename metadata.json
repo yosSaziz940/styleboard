@@ -1,0 +1,6 @@
+{
+  "name": "StyleBoard",
+  "description": "An elegant, editorial menswear styling platform in light and dark mode with RTL support, curated styling boards, and an interactive AI outfit builder with virtual model preview.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

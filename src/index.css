@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Naskh+Arabic:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", "Times New Roman", serif;
+  --font-sans: "DM Sans", "Inter", system-ui, sans-serif;
+  --font-arabic: "Noto Naskh Arabic", serif;
+
+  --color-navy: #1A1A2E;
+  --color-sand: #E8C4A0;
+  --color-gold: #C9A96E;
+  --color-cream: #FAF7F4;
+  --color-charcoal: #2D2D2D;
+  --color-rose: #D4A5A5;
+
+  /* Custom palette matching user specifications */
+  --color-brand-primary: #1A1A2E;
+  --color-brand-secondary: #E8C4A0;
+  --color-brand-accent: #C9A96E;
+  --color-brand-bg-light: #FAF7F4;
+  --color-brand-bg-dark: #12121e;
+  --color-brand-text: #2D2D2D;
+  --color-brand-text-dark: #E2E2E2;
+  --color-brand-highlight: #D4A5A5;
+}
+
+@layer base {
+  body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom scrollbars and transitions for our Vogue-Pinterest feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9A96E;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E8C4A0;
+}
+
+/* Pinterest Masonry Layout */
+.masonry-columns {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .masonry-columns {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-columns {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1280px) {
+  .masonry-columns {
+    column-count: 4;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+/* Shimmer Loading Skeleton */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(226, 226, 226, 0.4) 25%,
+    rgba(240, 240, 240, 0.6) 37%,
+    rgba(226, 226, 226, 0.4) 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer-anim 1.4s ease infinite;
+}
+
+.dark .shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(30, 30, 46, 0.4) 25%,
+    rgba(50, 50, 70, 0.6) 37%,
+    rgba(30, 30, 46, 0.4) 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer-anim 1.4s ease infinite;
+}
+
+@keyframes shimmer-anim {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
