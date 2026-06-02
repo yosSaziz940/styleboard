@@ -78,7 +78,7 @@ export default function AdZone({ type, language }: AdZoneProps) {
         <ins
           className="adsbygoogle"
           style={{ display: 'block', width: '100%' }}
-          data-ad-client="ca-pub-YOUR_PUBLISHER_ID" // Replace with your Google Publisher ID
+          data-ad-client="2345678901" // Replace with your Google Publisher ID
           data-ad-slot={config.slotId}
           data-ad-format={config.format}
           data-full-width-responsive="true"
