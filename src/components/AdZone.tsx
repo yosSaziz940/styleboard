@@ -66,19 +66,12 @@ export default function AdZone({ type, language }: AdZoneProps) {
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      {/* Dev preview border so you know where Google will render your Adsense banner */}
-      <div className="w-full text-center">
-        <span className="text-[8px] uppercase tracking-widest text-gray-400 font-mono block mb-1">
-          {isAr ? 'مساحة إعلانات جوجل التلقائية' : 'Google AdSense Zone'}
-        </span>
-      </div>
-
       <div className={`${config.className} overflow-hidden border border-dashed border-gray-200 dark:border-gray-800/60 rounded-xl bg-transparent`}>
         {/* Real Google AdSense Tag Structure */}
         <ins
           className="adsbygoogle"
           style={{ display: 'block', width: '100%' }}
-          data-ad-client="7908341311699201" // Replace with your Google Publisher ID
+          data-ad-client="ca-pub-YOUR_PUBLISHER_ID" // Replace with your Google Publisher ID
           data-ad-slot={config.slotId}
           data-ad-format={config.format}
           data-full-width-responsive="true"

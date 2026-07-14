@@ -16,6 +16,7 @@ export default function App() {
   const [activeSearch, setActiveSearch] = useState<string>('');
   const [selectedOutfit, setSelectedOutfit] = useState<Outfit | null>(null);
   const [looksLibraryTab, setLooksLibraryTab] = useState<'all' | 'summer' | 'work' | 'casual'>('all');
+  const [aboutActiveSection, setAboutActiveSection] = useState<'about' | 'contact' | 'privacy' | 'terms'>('about');
 
   const isAr = language === 'ar';
 
@@ -67,7 +68,13 @@ export default function App() {
           />
         );
       case 'about':
-        return <AboutPage language={language} />;
+        return (
+          <AboutPage 
+            language={language} 
+            activeSection={aboutActiveSection}
+            setActiveSection={setAboutActiveSection}
+          />
+        );
       case 'ai-builder':
         return (
           <AIOutfitBuilder
@@ -149,12 +156,32 @@ export default function App() {
 
           {/* Legal Links */}
           <div className="flex flex-col items-center md:items-end gap-1.5 text-[11px] text-[#C9A96E] font-medium">
-            <a href="#privacy" className="hover:text-[#1A1A2E] dark:hover:text-white transition-colors">
-              {footerText.privacy}
-            </a>
-            <a href="#terms" className="hover:text-[#1A1A2E] dark:hover:text-white transition-colors">
-              {footerText.terms}
-            </a>
+            <div className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-1.5">
+              <button 
+                onClick={() => { setAboutActiveSection('about'); setCurrentPage('about'); }}
+                className="hover:text-[#1A1A2E] dark:hover:text-white transition-colors cursor-pointer"
+              >
+                {isAr ? 'عن ستايل بورد' : 'About Us'}
+              </button>
+              <button 
+                onClick={() => { setAboutActiveSection('contact'); setCurrentPage('about'); }}
+                className="hover:text-[#1A1A2E] dark:hover:text-white transition-colors cursor-pointer"
+              >
+                {isAr ? 'اتصل بنا والشكاوى' : 'Contact Us'}
+              </button>
+              <button 
+                onClick={() => { setAboutActiveSection('privacy'); setCurrentPage('about'); }}
+                className="hover:text-[#1A1A2E] dark:hover:text-white transition-colors cursor-pointer"
+              >
+                {footerText.privacy}
+              </button>
+              <button 
+                onClick={() => { setAboutActiveSection('terms'); setCurrentPage('about'); }}
+                className="hover:text-[#1A1A2E] dark:hover:text-white transition-colors cursor-pointer"
+              >
+                {footerText.terms}
+              </button>
+            </div>
             <span className="text-gray-400 text-[10px] block mt-2 text-center md:text-right">
               {footerText.rights}
             </span>
