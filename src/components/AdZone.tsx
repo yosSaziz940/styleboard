@@ -6,16 +6,7 @@ interface AdZoneProps {
   language: Language;
 }
 
-/**
- * AdZone - Empty Google AdSense Placeholder Integrator.
- * 
- * To activate Google AdSense on your live website:
- * 1. Put the main Google AdSense script in your `/index.html` <head>:
- *    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID" crossorigin="anonymous"></script>
- * 
- * 2. In this file, replace "ca-pub-YOUR_PUBLISHER_ID" with your real AdSense Publisher ID.
- * 3. Replace the "YOUR_AD_SLOT_ID" with the specific Ad Unit IDs you created in your Google AdSense Dashboard.
- */
+
 export default function AdZone({ type, language }: AdZoneProps) {
   const isAr = language === 'ar';
 
