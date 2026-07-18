@@ -161,6 +161,22 @@ export default function AboutPage({
               </div>
               <p>StyleBoard operates strictly under the Google Publisher Policies & Restrictions guidelines.</p>
             </div>
+
+            {/* Premium Direct Offer CPM Link */}
+            <div className="pt-4 mt-4 border-t border-gray-150 dark:border-zinc-800 px-1">
+              <a 
+                href="https://www.effectivecpmnetwork.com/km7uusgdz?key=441762ef942e3003549e488f2f6b2c1b"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-between px-3 py-2.5 bg-gradient-to-r from-[#C9A96E]/10 to-[#E8C4A0]/5 hover:from-[#C9A96E]/20 hover:to-[#E8C4A0]/10 border border-[#C9A96E]/30 rounded-xl text-[10px] font-black text-[#1A1A2E] dark:text-[#E8C4A0] transition-all cursor-pointer group"
+              >
+                <div className="flex items-center gap-1.5">
+                  <Sparkles className="w-3 h-3 text-[#C9A96E] animate-pulse" />
+                  <span>{isAr ? 'العروض الحصرية الفاخرة ⚜' : 'Premium Style Deals ⚜'}</span>
+                </div>
+                <ArrowUpRight className="w-3 h-3 text-[#C9A96E] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+            </div>
           </div>
         </div>
 
